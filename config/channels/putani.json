@@ -1,0 +1,84 @@
+{
+  "id": "putani",
+  "order": 1,
+  "name": "Putani Loka Kids",
+  "short_name": "Putani",
+  "native_name": "ಪುಟಾಣಿ ಲೋಕ",
+  "language": "Kannada",
+  "lang_code": "kn",
+  "script_hint": "Kannada script, simple everyday words, clear pronunciation",
+  "pipeline": "kids_song",
+  "kind": "Kids songs · 3D animation",
+  "tagline": "Village songs from Karnataka, sung by Kumar, Lakshmi, Raju, Meera and the elephant.",
+  "about": "Kannada 3D animated kids channel. Karnataka village world: red-tiled roofs, coconut trees, rangoli, jaathre, temples, paddy fields. Traditional canon (Govina Gundu, Punyakoti), festival songs from a kid's-eye view, animal songs and learning songs.",
+  "audience": "Kids 2–8 and their parents, Karnataka + Kannada NRI. Made for Kids.",
+  "color": "#F2A900",
+  "accent": "#2E8B57",
+  "ink": "#3A2A05",
+  "runtime": "2:30–4:30",
+  "youtube": {
+    "handle": "@putanilokhakids",
+    "channel_id": ""
+  },
+  "cast": [
+    {
+      "name": "Kumar",
+      "look": "village boy, big curly black hair, NOTHING on his head (never a peta)"
+    },
+    {
+      "name": "Lakshmi",
+      "look": "village girl, two short braids with red ribbons and jasmine, pattu langa"
+    },
+    {
+      "name": "Raju",
+      "look": "village boy, the ONLY one who wears the red-gold Mysore peta"
+    },
+    {
+      "name": "Meera",
+      "look": "village girl, one long braid"
+    },
+    {
+      "name": "Aane",
+      "look": "friendly baby elephant mascot — exactly one"
+    }
+  ],
+  "visual_style": "3D Pixar-style animation, 4K, bright festival colours, soft cinematic lighting, NOT photorealistic. All kids same height, normal slim child build, NOT chubby, NOT fat, fully clothed, no text or labels.",
+  "suno_style": "Kannada kids folk song, traditional Karnataka rhythm, dollu and maddale percussion, bansuri flute, harmonium, cheerful children's choir with warm female lead, call and response, 110 BPM, clear Kannada pronunciation, no EDM",
+  "song_rules": "Proven winners: elephant, cow/animal and jaathre/festival songs; the traditional canon beats originals. Repeat the chorus at least 3 times. Hook in the first 5 seconds. Energy change about every 45 seconds.",
+  "publish_rules": "Titles: Kannada first, then romanised, then English descriptor, keyword-rich, year tag. Description in Kannada + English with lyric timestamps. Made for Kids. Category Education. Publish slot: Saturday 7:00 AM IST. No comment prompts, no subscribe asks.",
+  "research": {
+    "keywords": [
+      "kannada rhymes for kids",
+      "kannada kids songs",
+      "ಮಕ್ಕಳ ಹಾಡುಗಳು",
+      "kannada cartoon songs"
+    ],
+    "region": "IN",
+    "brief": "Niche: Kannada kids rhymes and songs. Competitors: infobells Kannada, Kids TV Kannada, Sargam Kids Kannada. Look for: festivals 2–4 weeks away, traditional songs with search demand, animal songs, learning topics (numbers, colours, good habits)."
+  },
+  "edit": {
+    "intro": true,
+    "outro": true,
+    "logo": true,
+    "lyrics": true,
+    "subscribe": false,
+    "subscribeTimes": [],
+    "font": "Nirmala UI",
+    "delogo": "",
+    "hook": false,
+    "popwords": false,
+    "endcard": false
+  },
+  "notes": "Subscribe pop-ups are OFF: the channel rules say no subscribe asks on this Made for Kids channel. Turn on in the Edit stage only if you change that rule.",
+  "scene_len": {
+    "min": 3.5,
+    "max": 6
+  },
+  "scene_len_note": "Scene length in seconds. Match it to your clip tool: Grok/Vibes make ~6 s clips; Wan 3.0 can make any length.",
+  "packaging": {
+    "title_pattern": "\"<Kannada title> <1–2 emoji> | <English title> | Kannada Kids Song(s) <year>\" — e.g. \"ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು 🐄🔔 | Gowri Cow Song | Kannada Kids Songs 2026\". Curiosity titles (a question or a surprise from the story) beat plain topic titles.",
+    "geo": "Karnataka first (Bengaluru, Mysuru, Hubballi, Mangaluru — Kannada words parents type: ಮಕ್ಕಳ ಹಾಡುಗಳು, ಕನ್ನಡ ರೈಮ್ಸ್, kannada rhymes), then Kannada families abroad (USA, UAE, UK, Canada, Australia, Singapore) with English words like \"Kannada songs for kids\"."
+  },
+  "thumb_rules": "One big hero (the animal or one kid face) with a strong happy or surprised expression; bright warm village colours; 2–4 big Kannada words in yellow with a thick dark outline, never over a face; logo small bottom-right; a curiosity question works best (ಪುಟ್ಟು ಎಲ್ಲಿ?). Best past CTR: First Day of School 10.2% — a relatable kid moment with big faces.",
+  "choreography": "SIGNATURE CHORUS DANCE \"Putani Kunita\" (ಪುಟಾಣಿ ಕುಣಿತ) — 4 moves, always in this order. Chorus clip 1 = move 1, clip 2 = move 2, clip 3 = move 3, clip 4 = move 4, then start again; every chorus of every song uses the same moves so kids learn them. All four kids do the move together, side by side, facing the camera, on their own spot:\n  1. \"Putani Clap\": clap twice high above the head on the beat, then a big smile.\n  2. \"Aane Sway\": one arm hangs in front of the nose like an elephant trunk and swings gently while the body sways left, then right.\n  3. \"Kunita Hop\": hands on hips, two small hops on the spot, knees soft.\n  4. \"Hello Wave\": both hands wave at the camera, heads tilt and smile.\nIf Aane is in the picture he copies the move (trunk sway, little hop) next to the kids.\nINSTRUMENTAL HOOKS (every music break without singing gets one, rotating in this order):\n  A. Reaction close-up: one kid's face big in the frame — a big surprised \"oh!\" or a happy laugh with eyes wide.\n  B. Aane moment: the baby elephant Aane alone or with one kid — flaps his big ears and waves his trunk at the camera.\n  C. Drum clap: all kids clap on the drum beats and nod, wide shot.\nPlan a plate for each: a close-up plate for A, a plate with Aane for B, the wide group plate for C."
+}

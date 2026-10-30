@@ -1,0 +1,23 @@
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Picked idea: Hallu Ujju Haadu (Brush Your Teeth)
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Approved song package
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Picked version A
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Approved timeline (21 scenes)
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Approved final video
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Picked idea: Hallu Ujju Haadu (Brush Your Teeth)
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Approved song package
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Picked version A
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Approved timeline (39 scenes)
+- 2026-10-13 · ಹಲ್ಲು ಉಜ್ಜು ಹಾಡು · Approved final video
+- 2026-10-13 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Picked idea: Our Gowri Cow (Village Cow Song) (topic-only: the brain does the rest)
+- 2026-10-13 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved song package — written by Claude
+- 2026-10-13 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Picked version A
+- 2026-10-13 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved timeline (27 scenes) — approved by the brain
+- 2026-10-21 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check
+- 2026-10-21 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check
+- 2026-10-21 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check
+- 2026-10-21 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check
+- 2026-10-21 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Ready to upload. Title: ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು 🐄🔔 | Gowri Cow Song | Kannada Kids Songs 2026 — approved by the brain (10/10)
+- 2026-10-21 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved timeline (39 scenes) — approved by the brain
+- 2026-10-22 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check
+- 2026-10-22 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check
+- 2026-10-27 · ನಮ್ಮ ಮನೆಯ ಗೌರಿ ಹಸು · Approved final video — passed the quality check and the director

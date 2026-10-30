@@ -1,0 +1,22 @@
+{
+  "checked": "2026-10-13",
+  "truth": "FreeLLMAPI's headline of billions of free tokens a month is the sum of every provider's advertised limit. Real users found the usable pool is often about an eighth of the dashboard figure, and the best models run out first each day (it then falls back to smaller ones until the daily reset). Even so, a few hundred million tokens a month is far more than the Studio needs — one full song package is about 10,000 tokens.",
+  "privacy": "Free tiers often keep or train on prompts (Google AI Studio outside the EU, Mistral's free plan, Kilo free models). Only send text that will be public anyway — lyrics, scripts, titles. Never send keys, passwords or private details.",
+  "providers": [
+    { "rank": 1, "name": "Google AI Studio (Gemini)", "why": "Best free quality, and the strongest of the free models at Kannada and Hindi. Use it for songs and scripts.", "limits": "Per-model daily limits; Gemma models up to 14,400 requests/day, Gemini Flash fewer", "signup": "Google account, no card", "key_url": "https://aistudio.google.com/apikey", "status": "add first" },
+    { "rank": 2, "name": "Groq", "why": "Very fast. Good for research summaries, tags and descriptions.", "limits": "About 1,000 requests/day per big model (e.g. gpt-oss-120b), 30/min", "signup": "Email, no card", "key_url": "https://console.groq.com/keys", "status": "add first" },
+    { "rank": 3, "name": "Cerebras", "why": "Large daily token allowance on strong open models.", "limits": "About 1M tokens/day per model, 5 requests/min", "signup": "Email, no card", "key_url": "https://cloud.cerebras.ai", "status": "recommended" },
+    { "rank": 4, "name": "Mistral", "why": "Big monthly allowance. Good backup writer.", "limits": "Generous token limits on the free Experiment plan", "signup": "Phone verification; free plan requires agreeing that prompts may be used for training", "key_url": "https://console.mistral.ai/api-keys", "status": "recommended" },
+    { "rank": 5, "name": "NVIDIA NIM", "why": "Many large models (Nemotron, Llama, Qwen).", "limits": "40 requests/min", "signup": "NVIDIA developer account + phone verification", "key_url": "https://build.nvidia.com", "status": "optional" },
+    { "rank": 6, "name": "OpenRouter", "why": "One key for many ':free' models.", "limits": "50 requests/day free (1,000/day after a one-time $10 top-up — not needed)", "signup": "Email, no card", "key_url": "https://openrouter.ai/keys", "status": "optional" },
+    { "rank": 7, "name": "Cloudflare Workers AI", "why": "Steady daily allowance across many models.", "limits": "10,000 'neurons'/day", "signup": "Cloudflare account + API token", "key_url": "https://dash.cloudflare.com/profile/api-tokens", "status": "optional" },
+    { "rank": 8, "name": "Kilo Gateway", "why": "Works with no signup at all.", "limits": "200 requests/hour per internet connection", "signup": "None", "key_url": "", "status": "already added" },
+    { "rank": 9, "name": "OVH AI Endpoints", "why": "Works with no signup at all.", "limits": "2 requests/min per model", "signup": "None", "key_url": "", "status": "already added" },
+    { "rank": 10, "name": "Alibaba Model Studio", "why": "The same account that gives Wan 3.0 video also gives Qwen text models a free trial.", "limits": "Trial: about 1M tokens per model for 90 days (Singapore region)", "signup": "Alibaba Cloud account", "key_url": "https://modelstudio.console.alibabacloud.com", "status": "with Wan" }
+  ],
+  "avoid": [
+    { "name": "Cohere trial", "why": "Only 1,000 calls a month and the trial key is for non-commercial use." },
+    { "name": "Pollinations (images, no key)", "why": "Tested on your PC: ignored the requested size and half the prompt, and stamps a watermark. Fine for rough storyboards only." }
+  ],
+  "how": "Add keys in FreeLLMAPI (http://localhost:3001 → Keys → Add key). The Studio uses them automatically through one address; nothing to change in the Studio."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "sparkle",
+  "order": 3,
+  "name": "Sparkle Kids Planet",
+  "short_name": "Sparkle",
+  "native_name": "Sparkle Kids Planet",
+  "language": "English",
+  "lang_code": "en",
+  "script_hint": "simple English for toddlers",
+  "pipeline": "kids_song",
+  "kind": "Kids songs · 3D animation",
+  "tagline": "English nursery songs and learning songs for little ones everywhere.",
+  "about": "English 3D animated kids channel: nursery rhymes, learning songs (colours, numbers, shapes, animals, good habits), bright playful world. Cast to be locked — add character sheets in Brand.",
+  "audience": "Kids 2–6 worldwide and their parents. Made for Kids.",
+  "color": "#2F80ED",
+  "accent": "#12B5A6",
+  "ink": "#0B2550",
+  "runtime": "2:00–3:00",
+  "youtube": {
+    "handle": "@sparklekidsplanet",
+    "channel_id": ""
+  },
+  "cast": [],
+  "visual_style": "3D Pixar-style animation, 4K, bright candy colours, soft daylight, NOT photorealistic.",
+  "suno_style": "English nursery rhyme, playful ukulele, xylophone, claps, light drums, cheerful kids choir with warm female lead, call and response, 115 BPM, clear simple English, no EDM",
+  "song_rules": "Very short lines, lots of repetition, one learning idea per song, actions kids can copy (clap, jump, point). Hook in the first 5 seconds.",
+  "publish_rules": "Titles: keyword first (e.g. 'Colors Song'), then '| Nursery Rhymes & Kids Songs', year tag. Description with timestamps and lyrics. Made for Kids, Category Education.",
+  "research": {
+    "keywords": [
+      "nursery rhymes",
+      "kids songs",
+      "learning songs for toddlers",
+      "phonics song"
+    ],
+    "region": "US",
+    "brief": "Niche: English nursery rhymes and learning songs, a huge and competitive niche (Cocomelon, Super Simple Songs, Little Baby Bum). Find small-channel outliers and specific learning topics with high views/day."
+  },
+  "edit": {
+    "intro": true,
+    "outro": true,
+    "logo": true,
+    "lyrics": true,
+    "subscribe": false,
+    "subscribeTimes": [],
+    "font": "Arial",
+    "delogo": ""
+  },
+  "notes": "Characters are not locked yet. Upload character sheets in Brand before the first images.",
+  "scene_len": {
+    "min": 3.5,
+    "max": 6
+  },
+  "scene_len_note": "Scene length in seconds. Match it to your clip tool: Grok/Vibes make ~6 s clips; Wan 3.0 can make any length.",
+  "packaging": {
+    "title_pattern": "\"<Main keyword song> <1–2 emoji> | <hook phrase> | Nursery Rhymes & Kids Songs <year>\" — keyword first in English.",
+    "geo": "USA first, then UK, Canada, Australia, India and the Philippines (English nursery-rhyme search words: kids songs, nursery rhymes, toddler learning, baby songs)."
+  },
+  "thumb_rules": "One big friendly character face, bright primary colours, 2–3 big English words (yellow or white, thick dark outline), never over a face; toddler-friendly, very simple background."
+}

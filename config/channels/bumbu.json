@@ -1,0 +1,72 @@
+{
+  "id": "bumbu",
+  "order": 2,
+  "name": "Bumbu Ki Duniya",
+  "short_name": "Bumbu",
+  "native_name": "बंबू की दुनिया",
+  "language": "Hindi",
+  "lang_code": "hi",
+  "script_hint": "Devanagari, simple everyday Hindi",
+  "pipeline": "kids_song",
+  "kind": "Kids songs · 3D animation",
+  "tagline": "Baby elephant Bumbu, Chidiya Rani and Bandar Mama solve little problems with a song.",
+  "about": "Hindi 3D animated kids channel in a warm North Indian village and festive world. Story formula: small problem → friends help → sing and dance resolution.",
+  "audience": "Kids 2–8 and parents, India + NRI. Made for Kids.",
+  "color": "#E8447A",
+  "accent": "#F59F00",
+  "ink": "#4A0E22",
+  "runtime": "2:15–2:35",
+  "youtube": {
+    "handle": "@bumbukiduniya",
+    "channel_id": ""
+  },
+  "cast": [
+    {
+      "name": "Bumbu",
+      "look": "chubby baby elephant, soft light-grey skin, big round ears pink inside, big brown eyes with lashes, rosy cheeks, round belly, short curled trunk, small tail with a tuft, no tusks, no clothes"
+    },
+    {
+      "name": "Chidiya Rani",
+      "look": "round fluffy little bird, pink head, back and wings, yellow face and chest, big blue eyes, orange beak and feet, small golden tiara with pink gems, pink-and-yellow tail feathers"
+    },
+    {
+      "name": "Bandar Mama",
+      "look": "brown furry monkey, cream face and belly, big brown eyes, rosy cheeks, pink ears, red sleeveless vest with orange stitching and one yellow button, long curly tail"
+    }
+  ],
+  "visual_style": "3D Pixar-style animation, 4K, warm golden-hour light, bright colours, North Indian village, NOT photorealistic.",
+  "suno_style": "Hindi kids balgeet, North Indian folk, dholak, manjira, harmonium, bansuri, warm female lead with kids chorus, call and response, 120 BPM, clear Hindi, no EDM, no autotune",
+  "song_rules": "Searched rhymes to ride: hathi raja, bandar mama, chidiya rani — with a new toddler problem. Never use Kannada lyrics or Putani characters. Hook in the first 5 seconds; chorus at least 3 times.",
+  "publish_rules": "Everything bilingual: full Hindi + full English. Titles Hindi first + romanised + English, year tag. Tags in 7 sets: core search, educational/cultural, NRI/global, long-tail, character, generic kids, Hinglish. Made for Kids, Category Education, Language Hindi. No 'comment below'.",
+  "research": {
+    "keywords": [
+      "hindi rhymes for kids",
+      "hathi raja",
+      "bandar mama song",
+      "hindi balgeet"
+    ],
+    "region": "IN",
+    "brief": "Niche: Hindi kids rhymes/balgeet. Look for: festivals 2–4 weeks away, evergreen character rhymes with search demand, toddler daily-life problems (bath, sharing, sleep), learning songs."
+  },
+  "edit": {
+    "intro": true,
+    "outro": true,
+    "logo": true,
+    "lyrics": true,
+    "subscribe": false,
+    "subscribeTimes": [],
+    "font": "Nirmala UI",
+    "delogo": "x=660:y=362:w=70:h=30"
+  },
+  "notes": "Subscribe pop-ups start OFF for a Made for Kids channel; you can turn them on in the Edit stage.",
+  "scene_len": {
+    "min": 3.5,
+    "max": 6
+  },
+  "scene_len_note": "Scene length in seconds. Match it to your clip tool: Grok/Vibes make ~6 s clips; Wan 3.0 can make any length.",
+  "packaging": {
+    "title_pattern": "\"<Hindi title> <1–2 emoji> | <English title> | Hindi Rhymes for Kids <year>\" — Hindi first in Devanagari, then English.",
+    "geo": "Hindi belt first (UP, Bihar, MP, Rajasthan, Delhi NCR — words parents type: हिंदी बालगीत, बच्चों के गाने, hindi rhymes, hindi poem for kids), then Hindi-speaking families abroad (USA, UAE, UK, Canada, Nepal) with Hinglish and English words."
+  },
+  "thumb_rules": "One big hero character face with a big emotion; bright colours; 2–4 big Hindi words (Devanagari) in yellow with a thick dark outline, never over a face; logo small bottom-right; curiosity or fun words (अरे! कहाँ गया?)."
+}

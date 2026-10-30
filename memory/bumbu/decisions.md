@@ -1,0 +1,4 @@
+- 2026-10-25 · हाथी राजा बम्बु भैया · Picked idea: Hathi Raja Bumbu Bhaiya - Baby Elephant Song (topic-only: the brain does the rest)
+- 2026-10-25 · हाथी राजा बम्बु भैया · Approved song package — approved by the brain (10/10)
+- 2026-10-25 · हाथी राजा बम्बु भैया · Picked version A
+- 2026-10-25 · हाथी राजा बम्बु भैया · Approved timeline (38 scenes) — approved by the brain

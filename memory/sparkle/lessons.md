@@ -1,0 +1,3 @@
+# Lessons learned — Sparkle Kids Planet
+- 2026-10-26: Anand (26 Oct): full motion only - no still pictures in any kids video, ever. Songs may be 3:00-3:30. The free clip tools go to one song at a time (the one closest to finished) so one full video is finished each day, rotating channels. Calm continuous shots use one 10 s clip for two scenes on Dola/Dreamina.
+- 2026-10-27 · Anand compared the website video (Gowri, 13 pictures for 39 scenes, 24 fps, flat eye-level shots, some animals with extra legs) with the hand-made Hallu Ujju (40 pictures, one per scene, drone/close-up/top-down/POV angles, anatomy lock lines, 30 fps). Rule now: one picture per scene, camera menu, anatomy lock, 30 fps.

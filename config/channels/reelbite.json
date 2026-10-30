@@ -1,0 +1,72 @@
+{
+  "id": "reelbite",
+  "order": 5,
+  "name": "ReelBite Hollywood",
+  "short_name": "ReelBite",
+  "native_name": "ReelBite Hollywood",
+  "language": "English",
+  "lang_code": "en",
+  "script_hint": "English, fast punchy Shorts narration",
+  "pipeline": "reel",
+  "kind": "Hollywood stories · sourced Shorts (comic-explainer edit)",
+  "tagline": "Hollywood's biggest moments, cut down to 60 seconds.",
+  "about": "English Shorts on true Hollywood stories (flops, behind-the-scenes, box office, studio drama), 60-90 s, told like a comic explainer but with real proof on screen: free-licence photos (Wikimedia Commons, credited), headline and quote cards with sources, animated box-office charts, comic panels only where no real image exists. Brand: black and warm gold.",
+  "audience": "Adults 18–44 who follow movies, TV and celebrity news (US, UK, India). Not made for kids.",
+  "color": "#0B0B0B",
+  "accent": "#D9B26A",
+  "ink": "#F5EBD7",
+  "runtime": "about 60 seconds (vertical Short)",
+  "youtube": {
+    "handle": "@ReelBiteHollywood",
+    "channel_id": ""
+  },
+  "cast": [],
+  "visual_style": "Bold comic-book illustration, thick black ink outlines, halftone dots, black and warm gold palette with red accents, dramatic lighting.",
+  "suno_style": "",
+  "script_rules": "Hook in the first 2.5 seconds; 160-220 words; short spoken sentences; every fact sourced; exact quotes only; end with a question to the viewer.",
+  "publish_rules": "Title under 60 characters with the surprising fact (e.g. \"The Movie That Destroyed a Hollywood Studio\"). Description: 2-line summary + full Sources and Image credits list. Hashtags: #hollywood #movies #shorts + 1-2 film-specific. Comments open (adult channel).",
+  "research": {
+    "keywords": [
+      "hollywood news",
+      "movie news",
+      "box office",
+      "trailer reaction"
+    ],
+    "region": "US",
+    "brief": "True Hollywood stories with a twist: famous flops, studio near-collapses, on-set disasters, box-office upsets, origin stories of movie rules. Prefer stories with free-licence photos and solid sources. Avoid gossip, rumours and anything about minors."
+  },
+  "edit": {
+    "intro": false,
+    "outro": false,
+    "logo": true,
+    "lyrics": false,
+    "subscribe": false,
+    "font": "Montserrat",
+    "delogo": ""
+  },
+  "notes": "Pipeline reel v2 (26 Oct 2026): daily story finder (Wikipedia-grounded) → script → fact-check → Voicebox → shots → top-editor cut → QA → upload package. Anand uploads.",
+  "paused": true,
+  "packaging": {
+    "title_pattern": "\"The Movie That <shocking result>\" / \"Why <star/studio> <surprising action>\" / \"<Number> Hours/Dollars That <result>\" — surprising fact first.",
+    "geo": "USA, UK, Canada, Australia and India"
+  },
+  "thumb_rules": "",
+  "voice": {
+    "engine": "gemini",
+    "voice": "am_michael",
+    "speed": 1.15,
+    "gemini_voice": "Charon"
+  },
+  "per_day": 3,
+  "slots": [
+    7,
+    12,
+    17
+  ],
+  "music_volume": 0.55,
+  "cta": "for more Hollywood stories",
+  "playlists": [
+    "Movie Facts",
+    "Actor Facts"
+  ]
+}

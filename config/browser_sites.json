@@ -1,0 +1,260 @@
+{
+  "note": "Websites the free browser agent may use in Studio Chrome. Free features only. goal = what to do (the agent learns the clicks once, then replays them). daily_cap and gap_s keep the pace like normal use. Set enabled:false to skip a site.",
+  "order": {
+    "images": [
+      "meta_image",
+      "flow_image"
+    ],
+    "videos": [
+      "vibes_video",
+      "dreamina_video",
+      "vheer_video",
+      "dola_video",
+      "qwen_video",
+      "flow_video",
+      "meta_animate",
+      "pixverse_video"
+    ]
+  },
+  "sites": {
+    "flow_image": {
+      "name": "Google Flow (pictures)",
+      "kind": "images",
+      "enabled": false,
+      "url": "https://flow.google.com/",
+      "signin": "https://flow.google.com/",
+      "prompt_template": "Create ONE 16:9 image (an image, not a video) with Nano Banana. Use the attached reference pictures as the exact character designs: same faces, hair, outfits, colours and body size; each character only once; no text. Scene: {prompt}",
+      "goal": "Press 'New project' (this song gets its own new project; every later picture of the song goes into it). In the 'What do you want to create?' box: press + and use 'Upload media' to upload the reference files ({files}). Then make sure EVERY uploaded reference picture is added to the prompt as an ingredient — one by one, all of them ({files}), not just one — before typing. Type the prompt and press the send arrow. If the agent asks to confirm before generating, confirm. When the new image is visible in the project, answer done.",
+      "max_steps": 30,
+      "result_timeout_s": 240,
+      "daily_cap": 60,
+      "gap_s": 45,
+      "signed_out": {
+        "url": "flow\\.google\\.com/about|accounts\\.google\\.com",
+        "text": ""
+      },
+      "project_url_rx": "/project/",
+      "goal_in_project": "You are already inside this song's project — do NOT create or open another project. In the prompt box: press + and use 'Upload media' to upload the reference files ({files}). Then make sure EVERY uploaded reference picture is added to the prompt as an ingredient — one by one, all of them ({files}), not just one — before typing. Type the prompt and press the send arrow. If the agent asks to confirm before generating, confirm. When the new image is visible in the project, answer done.",
+      "disabled_why": "Free Flow pictures carry a visible Google sparkle watermark (Anand: no watermarks). Not removed by the Studio."
+    },
+    "meta_image": {
+      "name": "Meta AI Imagine (pictures)",
+      "kind": "images",
+      "enabled": true,
+      "url": "https://www.meta.ai/",
+      "signin": "https://www.meta.ai/",
+      "prompt_template": "Imagine a 16:9 image. Use the attached pictures as the exact character designs; each character once; no text. {prompt}",
+      "goal": "Start a new chat. Attach the reference files ({files}) with the attach/+ button, type the prompt and send it. When the generated image is visible, answer done.",
+      "max_steps": 25,
+      "result_timeout_s": 180,
+      "daily_cap": 40,
+      "gap_s": 45,
+      "signed_out": {
+        "url": "",
+        "text": "^(?=[\\s\\S]*\\bLog in\\b)(?![\\s\\S]*\\bLog out\\b)(?![\\s\\S]*New chat)"
+      },
+      "script": "meta"
+    },
+    "vibes_video": {
+      "name": "Vibes (clips)",
+      "kind": "videos",
+      "enabled": true,
+      "url": "https://vibes.ai/",
+      "signin": "https://vibes.ai/",
+      "prompt_template": "{prompt}",
+      "goal": "Make a video from an image on Vibes. If you see the projects list, press 'Create new' once and wait for the editor. In the editor: make sure 'Video' is selected; if there is an aspect-ratio option choose 16:9 / landscape; open 'Start, end frame' → add a start frame. In the 'Select start frame' window: if a picture tile is already shown under 'This project', click that picture tile ONCE to select it (do not upload again); otherwise press 'Upload' and upload the scene picture ({files}) once, then click its picture tile. Then press 'Add to video'. Type the motion prompt into 'Describe a video…' and press the round send arrow. Do not use paid or upgrade options. When the new video appears and is playable, answer done.",
+      "max_steps": 30,
+      "result_timeout_s": 420,
+      "daily_cap": 25,
+      "gap_s": 60,
+      "signed_out": {
+        "url": "",
+        "text": "Download app\\s+Log In"
+      },
+      "script": "vibes",
+      "short_prompt": true,
+      "refusal_text": "Couldn.t generate|could not be generated|Generation failed",
+      "hourly_cap": 2,
+      "daily_send_cap": 8,
+      "send_gap_min": 25
+    },
+    "grok_video": {
+      "name": "Grok Imagine (clips)",
+      "kind": "videos",
+      "enabled": false,
+      "url": "https://grok.com/imagine",
+      "signin": "https://grok.com/",
+      "prompt_template": "{prompt}",
+      "goal": "Upload the scene picture ({files}) to make a video from it, type the motion prompt, and generate. When the new video is visible, answer done.",
+      "max_steps": 30,
+      "result_timeout_s": 420,
+      "daily_cap": 15,
+      "gap_s": 60,
+      "signed_out": {
+        "url": "",
+        "text": "\\bSign in\\b[\\s\\S]{0,40}\\bSign up\\b"
+      }
+    },
+    "meta_animate": {
+      "name": "Meta AI animate (clips)",
+      "kind": "videos",
+      "enabled": false,
+      "url": "https://www.meta.ai/",
+      "signin": "https://www.meta.ai/",
+      "signed_out": {
+        "url": "",
+        "text": "^(?=[\\s\\S]*\\bLog in\\b)(?![\\s\\S]*\\bLog out\\b)(?![\\s\\S]*New chat)"
+      },
+      "prompt_template": "Animate this picture into a short video. Keep every character exactly as in the picture. Motion: {prompt}",
+      "goal": "Start a new chat. Attach the scene picture ({files}) with the + / Add attachment button, type the prompt and send it. When the generated VIDEO is visible and playable, answer done.",
+      "max_steps": 25,
+      "result_timeout_s": 300,
+      "daily_cap": 25,
+      "gap_s": 120,
+      "short_prompt": true,
+      "refusal_text": "can.t (help|create|generate) (with )?(that|this)|couldn.t generate",
+      "hourly_cap": 6
+    },
+    "qwen_video": {
+      "kind": "videos",
+      "enabled": false,
+      "max_steps": 28,
+      "result_timeout_s": 420,
+      "gap_s": 120,
+      "short_prompt": true,
+      "refusal_text": "can.t (help|create|generate)|couldn.t generate|generation failed|violat|not allowed|try a different prompt",
+      "name": "Qwen Chat video (clips)",
+      "url": "https://chat.qwen.ai/",
+      "signin": "https://chat.qwen.ai/",
+      "signed_out": {
+        "url": "",
+        "text": "^(?=[\\s\\S]*\\b(Log in|Sign in)\\b)(?![\\s\\S]*New Chat)"
+      },
+      "prompt_template": "Animate this picture into a short video (image to video). Keep every character exactly as in the picture. Motion: {prompt}",
+      "goal": "Wait until the Qwen chat page has fully loaded. Do NOT just chat: a normal chat answer is text, not a video. Click 'Create' in the left menu (or the Video / Video Generation mode near the message box) so it makes an image-to-video clip. Upload the scene picture ({files}) as the starting image, type the prompt and send it. Wait. When the generated VIDEO is visible and playable, answer done. If it replies only with text saying it cannot make videos, go back and choose Create → Video instead.",
+      "daily_cap": 20,
+      "hourly_cap": 8,
+      "script": "qwen",
+      "front": true,
+      "ready": "textarea"
+    },
+    "flow_video": {
+      "kind": "videos",
+      "enabled": false,
+      "max_steps": 28,
+      "result_timeout_s": 420,
+      "gap_s": 120,
+      "short_prompt": true,
+      "refusal_text": "can.t (help|create|generate)|couldn.t generate|generation failed|violat|not allowed|try a different prompt",
+      "name": "Google Flow video (clips)",
+      "url": "https://flow.google.com/",
+      "signin": "https://flow.google.com/",
+      "signed_out": {
+        "url": "flow\\.google\\.com/about|accounts\\.google\\.com"
+      },
+      "prompt_template": "{prompt}",
+      "goal": "Flow opens on 'All media' with a prompt bar at the bottom ('What do you want to create?') that already shows 'Video · 720p · 8s'. Press the + button on the LEFT of that bar, upload the scene picture ({files}) and pick it as the START frame (one picture only). Type the prompt into the bar and press the → arrow on the right ONCE. Then just wait: the new video appears at the top of All media. When the new VIDEO appears and can be played, answer done. If it says there are not enough credits, answer blocked.",
+      "daily_cap": 6,
+      "project_url_rx": "/project/",
+      "hourly_cap": 4
+    },
+    "pixverse_video": {
+      "kind": "videos",
+      "enabled": true,
+      "max_steps": 28,
+      "result_timeout_s": 420,
+      "gap_s": 60,
+      "short_prompt": true,
+      "refusal_text": "can.t (help|create|generate)|couldn.t generate|generation failed|violat|not allowed|try a different prompt",
+      "name": "PixVerse (clips)",
+      "url": "https://app.pixverse.ai/",
+      "signin": "https://app.pixverse.ai/",
+      "signed_out": {
+        "url": "",
+        "text": "^(?=[\\s\\S]*\\b(Log in|Sign in|Sign up)\\b)(?![\\s\\S]*\\bCredits?\\b)"
+      },
+      "prompt_template": "{prompt}",
+      "goal": "Choose Video → Image & Text. Upload the scene picture ({files}) ONCE with the picture box (if a box asks 'replace file?', it is answered automatically). Before creating, make the clip as cheap as possible so the free daily credits cover it: switch Audio OFF, switch Multi-Shot OFF, keep 5s and the lowest resolution. Type the prompt into the box 'Describe the content…' and press Create once. When the generated VIDEO is visible and playable, answer done. If it asks to buy or says not enough credits, answer blocked.",
+      "daily_cap": 2,
+      "auto_confirm": [
+        {
+          "text": "replace file",
+          "button": "OK"
+        }
+      ]
+    },
+    "dola_video": {
+      "name": "Dola Seedance (clips)",
+      "kind": "videos",
+      "enabled": true,
+      "url": "https://www.dola.com/chat/create-image",
+      "signin": "https://www.dola.com/chat/",
+      "front": true,
+      "signed_out": {
+        "url": "/login",
+        "text": "^(?=[\\s\\S]*\\b(Log in|Sign in)\\b)(?![\\s\\S]*AI Creation)"
+      },
+      "script": "dola",
+      "short_prompt": true,
+      "prompt_template": "{prompt}",
+      "max_steps": 20,
+      "result_timeout_s": 480,
+      "daily_cap": 4,
+      "gap_s": 90,
+      "cap_text": "(don.t|do not) have (any )?(more )?(video )?credits|run out of (video )?credits|no (more )?video credits|0 video credits left today\\.?\\s*$",
+      "refusal_text": "can.t generate|unable to generate|violat|not allowed|couldn.t create",
+      "result_click": "Your video is ready",
+      "daily_send_cap": 4,
+      "long_ok": true
+    },
+    "vheer_video": {
+      "name": "Vheer (free clips)",
+      "kind": "videos",
+      "enabled": true,
+      "url": "https://vheer.com/app/image-to-video",
+      "signin": "https://vheer.com/app/image-to-video",
+      "front": true,
+      "signed_out": {
+        "url": "",
+        "text": "(?!)"
+      },
+      "script": "vheer",
+      "short_prompt": true,
+      "prompt_template": "{prompt}",
+      "max_steps": 10,
+      "result_timeout_s": 420,
+      "daily_cap": 40,
+      "gap_s": 60,
+      "hourly_cap": 12,
+      "refusal_text": "generation failed|could not generate|violat|not allowed",
+      "result_src": "^blob:",
+      "takes": 1
+    },
+    "dreamina_video": {
+      "name": "Dreamina Seedance (clips)",
+      "kind": "videos",
+      "enabled": true,
+      "url": "https://dreamina.capcut.com/ai-tool/home",
+      "signin": "https://dreamina.capcut.com/ai-tool/home",
+      "front": true,
+      "signed_out": {
+        "url": "/login",
+        "text": "\\bEn\\s+Sign in\\s+Create now\\b"
+      },
+      "prompt_template": "{prompt}",
+      "short_prompt": true,
+      "goal": "Make an image-to-video clip with the FREE daily credits. Open 'AI video' (video generation). Choose the Seedance model that the free credits cover (never a paid-only or 'Pro'/upgrade option). Set the aspect ratio to 16:9 and the length to {length} if that option exists. Upload the scene picture ({files}) as the FIRST frame / start image (not as a reference). Type the motion prompt into the prompt box and press Generate once. If any screen asks to buy credits, subscribe or upgrade, stop. When the new video appears and is playable, answer done.",
+      "max_steps": 25,
+      "result_timeout_s": 600,
+      "daily_cap": 6,
+      "gap_s": 90,
+      "hourly_cap": 3,
+      "daily_send_cap": 4,
+      "send_gap_min": 15,
+      "cap_text": "not enough credits|insufficient credits|credits (are )?(used up|exhausted)|0 credits",
+      "refusal_text": "generation failed|could not generate|violat|not allowed|unable to generate",
+      "takes": 1,
+      "long_ok": true
+    }
+  }
+}

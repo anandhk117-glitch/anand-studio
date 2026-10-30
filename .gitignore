@@ -1,0 +1,39 @@
+# keys and machine settings never go to GitHub
+data/settings.json
+.env
+
+# media stays on this PC (too big for git)
+data/projects/**/*.mp3
+data/projects/**/*.wav
+data/projects/**/*.m4a
+data/projects/**/*.flac
+data/projects/**/*.ogg
+data/projects/**/*.mp4
+data/projects/**/*.mov
+data/projects/**/*.webm
+data/projects/**/*.png
+data/projects/**/*.jpg
+data/projects/**/*.jpeg
+data/projects/**/*.webp
+data/projects/**/edit_work/
+brand/**/*.mp4
+brand/**/*.png
+brand/**/*.jpg
+brand/**/*.jpeg
+brand/**/*.webp
+*.tmp
+node_modules/
+data/autopilot.json
+data/discoveries.json
+data/claude_runs/
+data/logs/
+data/queue.json
+data/spend.json
+data/notifications.json
+
+# downloaded libraries
+**/node_modules/
+tools/reach-venv/
+data/chrome-studio/
+data/browser_debug/
+

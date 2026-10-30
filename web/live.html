@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Studio Live & Chat</title>
+<style>
+:root{--bg:#0f1115;--card:#181b22;--ink:#e9ecf1;--mute:#98a1b3;--acc:#f5a623;--ok:#3ecf8e;--warn:#ff6b6b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,Segoe UI,Roboto,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#0f1115ee;backdrop-filter:blur(6px);padding:10px 14px;display:flex;gap:10px;align-items:center;border-bottom:1px solid #222}
+header b{font-size:16px}header .dot{width:9px;height:9px;border-radius:50%;background:var(--ok);display:inline-block}
+header a{margin-left:auto;color:var(--mute);text-decoration:none;font-size:14px}
+main{padding:12px;max-width:900px;margin:0 auto;display:grid;gap:12px}
+.card{background:var(--card);border-radius:14px;padding:12px}
+.alert{background:#3a1f12;border:1px solid var(--acc);color:#ffd9a0}
+.alert b{color:var(--acc)}
+#screen{width:100%;border-radius:10px;display:block;background:#000;min-height:120px;touch-action:manipulation;cursor:crosshair}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+button,select{background:#262b36;color:var(--ink);border:1px solid #333a48;border-radius:10px;padding:9px 12px;font-size:14px}
+button.p{background:var(--acc);color:#1b1100;border:0;font-weight:600}
+input[type=text],input[type=password]{flex:1;min-width:120px;background:#0f1115;color:var(--ink);border:1px solid #333a48;border-radius:10px;padding:9px 10px;font-size:15px}
+.muted{color:var(--mute);font-size:13px}
+.proj h3{margin:0 0 6px;font-size:15px}.bar{height:8px;background:#262b36;border-radius:6px;overflow:hidden;margin:4px 0}
+.bar i{display:block;height:100%;background:var(--ok)}
+.log{font-size:12.5px;color:var(--mute);margin:6px 0 0;padding-left:16px}
+
+.msg{padding:9px 11px;border-radius:12px;white-space:pre-wrap;font-size:14px;max-width:92%}
+.msg.u{background:#2b3245;justify-self:end}.msg.a{background:#1f2a22;border:1px solid #2f4a37}
+.stages{display:flex;gap:3px;margin:6px 0}.stages i{flex:1;height:10px;border-radius:4px;background:#2a2f3a}
+.stages i.done{background:var(--ok)}.stages i.now,.stages i.working{background:var(--acc)}.stages i.waiting{background:var(--warn)}
+.pct{font-weight:700;color:var(--acc)}
+</style></head>
+<body>
+<header><span class="dot" id="dot"></span><b>Studio Live &amp; Chat</b><span class="muted" id="when"></span><a href="/">Open Studio →</a></header>
+<main>
+  <div id="alert" class="card alert" hidden></div>
+  <section class="card">
+    <div class="muted" id="what">Studio Chrome</div>
+    <img id="screen" alt="Studio Chrome screen">
+    <div class="muted" style="margin-top:6px">Tap the picture to click there. Type below to fill the box you tapped.</div>
+    <div class="row">
+      <input id="txt" type="text" placeholder="Type here, then Send text" autocomplete="off">
+      <button id="sendTxt">Send text</button>
+      <button data-key="Enter">Enter</button><button data-key="Backspace">⌫</button><button data-key="Tab">Tab</button>
+    </div>
+    <div class="row">
+      <button data-scroll="-500">▲ Up</button><button data-scroll="500">▼ Down</button>
+      <button id="back">← Back</button><button id="reload">Reload</button>
+      <label class="muted" style="display:flex;align-items:center;gap:6px"><input type="checkbox" id="pw"> hide typing</label>
+    </div>
+    <div class="row">
+      <select id="site"></select><button class="p" id="open">Open to sign in</button><button id="done">I'm signed in — close</button>
+    </div>
+  </section>
+  <section class="card" id="chatCard">
+    <b>Ask the Studio</b> <span class="muted">— status, why something stopped, “continue”, “retry clips”, “autopilot off”…</span>
+    <div id="chat" style="max-height:340px;overflow:auto;margin:10px 0;display:grid;gap:8px"></div>
+    <div class="row" style="margin-top:0">
+      <input id="ask" type="text" placeholder="e.g. what is the progress?  /  continue" autocomplete="off">
+      <button class="p" id="send">Send</button>
+    </div>
+    <div class="row">
+      <button data-q="What is the progress of every video?">Progress?</button>
+      <button data-q="Why did it stop and what should I do?">Why stopped?</button>
+      <button data-q="continue">Continue</button>
+    </div>
+  </section>
+  <section id="projects" class="grid" style="display:grid;gap:12px"></section>
+</main>
+<script>
+const $ = (s) => document.querySelector(s);
+const api = (u, o) => fetch(u, o).then((r) => (r.headers.get('content-type') || '').includes('json') ? r.json() : r);
+let busyShot = false;
+async function shot() {
+  if (busyShot || document.hidden) return;
+  busyShot = true;
+  try {
+    const r = await fetch('/api/live/shot?t=' + Date.now());
+    if (r.status === 200) { const b = await r.blob(); const u = URL.createObjectURL(b); const old = $('#screen').src; $('#screen').src = u; if (old.startsWith('blob:')) URL.revokeObjectURL(old); $('#dot').style.background = 'var(--ok)'; }
+    else $('#what').textContent = 'Studio Chrome is idle — nothing open right now.';
+    $('#when').textContent = new Date().toLocaleTimeString();
+  } catch { $('#dot').style.background = 'var(--warn)'; }
+  busyShot = false;
+}
+async function info() {
+  try {
+    const d = await api('/api/live');
+    const b = d.browser || {};
+    $('#what').textContent = b.active ? `${b.site || 'Studio Chrome'}${b.kind ? ' — making ' + (b.kind === 'videos' ? 'a clip' : 'a picture') : ''}${b.url ? ' · ' + new URL(b.url).host : ''}` : 'Studio Chrome';
+    const al = $('#alert');
+    if (b.needs) { al.hidden = false; al.innerHTML = `<b>${b.site} needs ${b.needs}.</b> Sign in on the screen below (tap the box, type, press Enter). Then press “I'm signed in — close”.`; }
+    else al.hidden = true;
+    const sel = $('#site');
+    if (!sel.options.length) for (const s of b.sites || []) sel.add(new Option(s.name, s.id));
+    const st = await api('/api/assistant').catch(() => null);
+    if (st?.state?.projects) { renderProjects(st.state.projects); if (!chatLoaded) { chatLoaded = true; (st.history || []).forEach((h) => addMsg(h.role, h.text)); } return; }
+    $('#projects').innerHTML = (d.projects || []).map((p) => `<div class="card proj"><h3>${p.title || p.id}</h3>
+      <div class="muted">Stage: ${p.stage || '?'}${p.busy ? ' — ' + p.busy : ''}</div>
+      <div class="muted">Pictures ${p.images}/${p.scenes}</div><div class="bar"><i style="width:${p.scenes ? (100 * p.images / p.scenes) : 0}%"></i></div>
+      <div class="muted">Clips ${p.videos}/${p.scenes}</div><div class="bar"><i style="width:${p.scenes ? (100 * p.videos / p.scenes) : 0}%"></i></div>
+      <ul class="log">${(p.log || []).map((l) => `<li>${l.replace(/</g, '&lt;')}</li>`).join('')}</ul></div>`).join('');
+  } catch {}
+}
+let chatLoaded = false;
+function renderProjects(list) {
+  $('#projects').innerHTML = list.map((p) => `<div class="card proj"><h3>${p.title} <span class="pct">${p.pct}%</span></h3>
+    <div class="stages">${p.stages.map((s) => `<i class="${s.status}" title="${s.label}: ${s.status}"></i>`).join('')}</div>
+    <div class="muted">Now: <b>${(p.stages.find((s) => s.key === p.current) || {}).label || p.current}</b>${p.busy ? ' — ' + p.busy : ''}${p.stuck.length ? ' — <span style="color:var(--warn)">stopped at ' + p.stuck.join(', ') + ' (press Continue)</span>' : ''}${p.error ? ' — <span style="color:var(--warn)">' + p.error.slice(0, 120) + '</span>' : ''}</div>
+    <div class="muted" style="margin-top:6px">Pictures ${p.images}/${p.scenes}</div><div class="bar"><i style="width:${p.scenes ? (100 * p.images / p.scenes) : 0}%"></i></div>
+    <div class="muted">Clips ${p.videos}/${p.scenes}</div><div class="bar"><i style="width:${p.scenes ? (100 * p.videos / p.scenes) : 0}%"></i></div>
+    <ul class="log">${p.log.slice(0, 4).map((l) => `<li>${l.replace(/</g, '&lt;')}</li>`).join('')}</ul></div>`).join('') || '<div class="card muted">No video in progress.</div>';
+}
+function addMsg(role, text) {
+  const d = document.createElement('div'); d.className = 'msg ' + (role === 'user' ? 'u' : 'a'); d.textContent = text;
+  $('#chat').appendChild(d); $('#chat').scrollTop = 1e9;
+}
+async function askStudio(q) {
+  q = (q || '').trim(); if (!q) return;
+  addMsg('user', q); $('#ask').value = '';
+  const wait = document.createElement('div'); wait.className = 'msg a'; wait.textContent = 'Thinking…'; $('#chat').appendChild(wait);
+  try {
+    const r = await api('/api/assistant', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: q }) });
+    wait.textContent = r.reply || r.error || 'No answer.';
+  } catch (e) { wait.textContent = 'Could not reach the Studio: ' + e.message; }
+  $('#chat').scrollTop = 1e9; info();
+}
+$('#send').onclick = () => askStudio($('#ask').value);
+$('#ask').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); askStudio($('#ask').value); } });
+document.querySelectorAll('[data-q]').forEach((b) => (b.onclick = () => askStudio(b.dataset.q)));
+const act = (a) => api('/api/live/act', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(a) }).then(() => setTimeout(shot, 700));
+$('#screen').addEventListener('click', (e) => { const r = e.target.getBoundingClientRect(); act({ type: 'click', x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }); });
+$('#sendTxt').onclick = () => { const t = $('#txt').value; if (t) act({ type: 'type', text: t }); $('#txt').value = ''; };
+$('#txt').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); $('#sendTxt').click(); } });
+$('#pw').onchange = (e) => ($('#txt').type = e.target.checked ? 'password' : 'text');
+document.querySelectorAll('[data-key]').forEach((b) => (b.onclick = () => act({ type: 'key', key: b.dataset.key })));
+document.querySelectorAll('[data-scroll]').forEach((b) => (b.onclick = () => act({ type: 'scroll', dy: +b.dataset.scroll })));
+$('#back').onclick = () => act({ type: 'back' });
+$('#reload').onclick = () => act({ type: 'reload' });
+$('#open').onclick = () => api('/api/live/open/' + $('#site').value, { method: 'POST' }).then(() => setTimeout(() => { info(); shot(); }, 2500));
+$('#done').onclick = () => api('/api/live/close', { method: 'POST' }).then(info);
+shot(); info(); setInterval(shot, 3000); setInterval(info, 8000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) { shot(); info(); } });
+</script>
+</body></html>

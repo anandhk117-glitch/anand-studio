@@ -1,0 +1,22 @@
+{
+  "note": "Each stage tries these tools in order until every scene is done. FREE TIERS ONLY — no tool here may buy anything. Reorder on Free apps & repos → Layer order.",
+  "images": [
+    "browser_agent",
+    "hf_space_ref",
+    "manual"
+  ],
+  "videos": [
+    "browser_agent",
+    "wan",
+    "manual"
+  ],
+  "voice": [
+    "voicebox",
+    "google_tts",
+    "manual"
+  ],
+  "music": [
+    "claude_browser",
+    "manual"
+  ]
+}

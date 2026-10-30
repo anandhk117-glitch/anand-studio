@@ -1,0 +1,220 @@
+{
+  "note": "Whitelist of free apps the Studio can work with. Install them yourself with the steps shown (or with Pinokio). The Studio never installs code from a link typed into the website.",
+  "apps": [
+    {
+      "id": "freellmapi",
+      "name": "FreeLLMAPI",
+      "layer": "Writing (research, songs, scripts, prompts, upload copy)",
+      "what": "Pools the free tiers of many AI providers (Google, Groq, Cerebras, Mistral, OpenRouter, GitHub Models…) behind one OpenAI-style address. The Studio's writing agents use it for free tokens.",
+      "repo": "https://github.com/tashfeenahmed/freellmapi",
+      "needs": "Node.js 20+. Free accounts/keys at the providers you add.",
+      "install": [
+        "git clone https://github.com/tashfeenahmed/freellmapi.git",
+        "cd freellmapi",
+        "npm install",
+        "Follow the README to start it (it runs on http://localhost:3001)",
+        "Open its dashboard → Keys → add your free provider keys → copy the unified key",
+        "Studio → Settings → paste the unified key"
+      ],
+      "url": "http://localhost:3001",
+      "health": "http://localhost:3001/v1/models",
+      "status": "recommended",
+      "used_by": [
+        "research",
+        "song",
+        "script",
+        "images",
+        "videos",
+        "publish"
+      ]
+    },
+    {
+      "id": "wan3-modelstudio",
+      "name": "Wan 3.0 (Alibaba Model Studio)",
+      "layer": "Videos — automatic",
+      "what": "Official Wan 3.0 image-to-video API. The Videos stage sends each scene image + motion prompt, waits, and saves the clip — no browser needed. Clips 2–30 s, so each scene gets its exact length. New international accounts get a free quota.",
+      "repo": "https://www.alibabacloud.com/help/en/model-studio/wan3-video-generation-api-reference",
+      "needs": "Alibaba Cloud account (Singapore / international), Model Studio activated, an API key",
+      "install": [
+        "Sign up at alibabacloud.com and open Model Studio (Singapore region)",
+        "Model Gallery → Wan 3.0 → check the free quota shown there",
+        "Turn ON 'Free Quota Only' for the model (Model usage → Free Quota) so it stops instead of billing",
+        "API Keys → create a key",
+        "Studio → Settings → Wan 3.0 → paste the key",
+        "Videos stage → 'Make clips with Wan 3.0'"
+      ],
+      "url": "https://modelstudio.console.alibabacloud.com",
+      "health": "",
+      "status": "built in",
+      "used_by": [
+        "videos"
+      ]
+    },
+    {
+      "id": "pinokio",
+      "name": "Pinokio",
+      "layer": "One-click installer for AI apps",
+      "what": "Installs and starts open-source AI apps (ComfyUI, ACE-Step, Wan, LTX-Video, Whisper…) with one click. Use it instead of installing Python apps by hand.",
+      "repo": "https://github.com/pinokiocomputer/pinokio",
+      "needs": "Windows installer from pinokio.computer",
+      "install": [
+        "Download Pinokio from https://pinokio.computer",
+        "Install, open, and use Discover to add the apps below"
+      ],
+      "url": "",
+      "health": "",
+      "status": "recommended",
+      "used_by": []
+    },
+    {
+      "id": "ace-step",
+      "name": "ACE-Step (free music)",
+      "layer": "Music",
+      "what": "Open-source text-to-music model that sings your lyrics in a chosen style. Runs on your PC. A free backup to Suno — check Kannada/Hindi pronunciation carefully before using it on a channel. Your PC has Intel graphics with no NVIDIA card, so this is listed for a future PC or a rented cloud GPU.",
+      "repo": "https://github.com/ace-step/ACE-Step",
+      "needs": "NVIDIA graphics card recommended. Install with Pinokio.",
+      "install": [
+        "Pinokio → Discover → ACE-Step → Install",
+        "Start it, open its page, paste the lyrics and style from the Song stage",
+        "Download the result and drop it into the Music stage"
+      ],
+      "url": "http://localhost:7865",
+      "health": "",
+      "status": "not for this PC (no GPU)",
+      "used_by": [
+        "music"
+      ]
+    },
+    {
+      "id": "comfyui",
+      "name": "ComfyUI",
+      "layer": "Images and videos (local, unlimited)",
+      "what": "Runs open image and video models on your own PC: FLUX for images, Wan 2.2 and LTX-Video for image-to-video. No credits, no daily limits — but needs a strong graphics card. Your PC has Intel graphics with no NVIDIA card, so this is listed for a future PC or a rented cloud GPU.",
+      "repo": "https://github.com/comfyanonymous/ComfyUI",
+      "needs": "NVIDIA graphics card (video models want a lot of video memory). Install with Pinokio.",
+      "install": [
+        "Pinokio → Discover → ComfyUI → Install",
+        "Add the Wan 2.2 image-to-video workflow inside ComfyUI",
+        "Use scene prompts from the Images / Videos stages, then drop the results into the Studio"
+      ],
+      "url": "http://localhost:8188",
+      "health": "http://localhost:8188/system_stats",
+      "status": "not for this PC (no GPU)",
+      "used_by": [
+        "images",
+        "videos"
+      ]
+    },
+    {
+      "id": "dola-seedance",
+      "name": "Seedance 2.5 on Dola",
+      "layer": "Videos (your browser)",
+      "what": "Seedance 2.5 makes strong 3D-cartoon clips up to 30 s on Dola's daily free credits. No API, so Claude Code drives it in your browser (or you do it and drop the clips in). The Studio does NOT automate extra accounts or watermark removal — that breaks Dola's terms.",
+      "repo": "https://www.dola.com",
+      "needs": "Your own Dola account, logged in once in Chrome",
+      "install": [
+        "Log in to dola.com once in Chrome",
+        "For prompt ideas, browse the Seedance prompt library at youmind.com/seedance-2-5-prompts/explore",
+        "Videos stage → 'Send to Claude Code' — it uses the daily free credits, then stops"
+      ],
+      "url": "https://www.dola.com",
+      "health": "",
+      "status": "browser option",
+      "used_by": [
+        "videos"
+      ]
+    },
+    {
+      "id": "huggingface",
+      "name": "Hugging Face (free token)",
+      "layer": "Images (cloud backup)",
+      "what": "The Images stage can make a scene image from its prompt with a free Hugging Face token (FLUX.1-schnell). Free monthly credits are small and characters are less consistent than Google Flow — use as a backup.",
+      "repo": "https://huggingface.co/black-forest-labs/FLUX.1-schnell",
+      "needs": "Free account → Settings → Access Tokens → new token (Read + Inference)",
+      "install": [
+        "Create a token at https://huggingface.co/settings/tokens",
+        "Studio → Settings → Hugging Face token"
+      ],
+      "url": "https://huggingface.co",
+      "health": "",
+      "status": "built in",
+      "used_by": [
+        "images"
+      ]
+    },
+    {
+      "id": "wan",
+      "name": "Wan 2.2 (image → video)",
+      "layer": "Videos (local)",
+      "what": "Open image-to-video model. Run it through ComfyUI or Pinokio when browser tools hit their daily limits. Your PC has Intel graphics with no NVIDIA card, so this is listed for a future PC or a rented cloud GPU.",
+      "repo": "https://huggingface.co/Wan-AI/Wan2.2-I2V-A14B-Diffusers",
+      "needs": "Strong NVIDIA graphics card",
+      "install": [
+        "Easiest: Pinokio → Discover → Wan",
+        "Or load a Wan 2.2 workflow in ComfyUI"
+      ],
+      "url": "",
+      "health": "",
+      "status": "not for this PC (no GPU)",
+      "used_by": [
+        "videos"
+      ]
+    },
+    {
+      "id": "kokoro",
+      "name": "Kokoro TTS (free narration)",
+      "layer": "Narration (Legends Decoded)",
+      "what": "Small open text-to-speech model with natural English voices. Free narration for drafts or full episodes.",
+      "repo": "https://github.com/hexgrad/kokoro",
+      "needs": "Runs on CPU. Install with Pinokio.",
+      "install": [
+        "Pinokio → Discover → Kokoro → Install",
+        "Paste the approved script, export WAV, drop it into the Narration stage"
+      ],
+      "url": "",
+      "health": "",
+      "status": "optional",
+      "used_by": [
+        "voice"
+      ]
+    },
+    {
+      "id": "whisper",
+      "name": "Whisper (timing)",
+      "layer": "Timeline",
+      "what": "Speech-to-text with word timestamps. Gives exact lyric/narration timing when Suno timestamps are not available.",
+      "repo": "https://github.com/SYSTRAN/faster-whisper",
+      "needs": "Install with Pinokio (Whisper apps) or Python",
+      "install": [
+        "Pinokio → Discover → Whisper → Install",
+        "Export word timestamps as JSON and paste them in the Timeline stage"
+      ],
+      "url": "",
+      "health": "",
+      "status": "optional",
+      "used_by": [
+        "timeline"
+      ]
+    },
+    {
+      "id": "browser-tools",
+      "name": "Suno · Google Flow · Grok · Kling · Hailuo",
+      "layer": "Music, images, videos (your logged-in browser)",
+      "what": "No public APIs. Claude Code drives them in your Chrome (Claude in Chrome) when a request is sent from the Studio, or you do them and drop the files in. Free tiers only — the agent never buys credits.",
+      "repo": "",
+      "needs": "Chrome with your accounts logged in + Claude Code",
+      "install": [
+        "Log in to each site in Chrome once",
+        "In the Studio press 'Send to Claude Code' on Music, Images or Videos"
+      ],
+      "url": "",
+      "health": "",
+      "status": "main path",
+      "used_by": [
+        "music",
+        "images",
+        "videos"
+      ]
+    }
+  ]
+}

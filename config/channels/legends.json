@@ -1,0 +1,66 @@
+{
+  "id": "legends",
+  "order": 4,
+  "name": "Legends Decoded",
+  "short_name": "Legends",
+  "native_name": "Legends Decoded",
+  "language": "English",
+  "lang_code": "en",
+  "script_hint": "English, documentary narration",
+  "pipeline": "documentary",
+  "kind": "Documentary · narration",
+  "tagline": "The mindset and decisions behind greatness — told by The Decoder.",
+  "about": "Global English documentary channel on the mindset and decisions behind historical and contemporary figures. Brand: midnight navy and gold, Cinzel + Montserrat, narration voice 'The Decoder'. Launch slate: Gandhi, Ronaldo, Messi, JFK, Ali, Jobs, Mandela, Einstein, Bruce Lee, Kobe.",
+  "audience": "Adults 18–45 in the UK, US and Europe (high RPM). Not made for kids.",
+  "color": "#0F1B3D",
+  "accent": "#C9A227",
+  "ink": "#F4E9C8",
+  "runtime": "10–14 minutes",
+  "youtube": {
+    "handle": "@legendsdecoded",
+    "channel_id": ""
+  },
+  "cast": [],
+  "visual_style": "Cinematic documentary still, dramatic chiaroscuro lighting, midnight navy and gold colour grade, film grain, 16:9, respectful portrayal, no text.",
+  "suno_style": "",
+  "script_rules": "Voice: The Decoder — calm, precise, intriguing. Structure: cold open hook (first 30 seconds) → the defining decision → early life that shaped it → turning points → the mindset decoded (3 principles) → legacy → one-line close. About 1,500–1,900 words for 10–12 minutes. Facts only; mark unsure claims (verify).",
+  "publish_rules": "Title formulas that break out: 'The Untold Story of…', 'Inside [X]: The Most Powerful…', 'The Tragedy of…'. SEO anchor: success mindset. Thumbnail: subject portrait left; 2–3 line title with one gold word right; pillar tag (MINDSET / POWER / CHAMPION / VISIONARY); brand bug top corner. Not made for kids.",
+  "research": {
+    "keywords": [
+      "success mindset",
+      "untold story of",
+      "mindset documentary",
+      "biography documentary"
+    ],
+    "region": "US",
+    "brief": "Niche: mindset/biography documentaries. Look for figures with rising search interest, anniversaries in the next 4–6 weeks, and small-channel outliers. Prefer figures from the launch slate until it is done."
+  },
+  "edit": {
+    "intro": true,
+    "outro": true,
+    "logo": true,
+    "lyrics": false,
+    "subscribe": true,
+    "subscribeTimes": [
+      45,
+      300
+    ],
+    "font": "Montserrat",
+    "delogo": ""
+  },
+  "notes": "Narration replaces the song. The timeline follows the script sections.",
+  "scene_len": {
+    "min": 5,
+    "max": 10
+  },
+  "scene_len_note": "Scene length in seconds. Match it to your clip tool: Grok/Vibes make ~6 s clips; Wan 3.0 can make any length.",
+  "packaging": {
+    "title_pattern": "\"The Untold Story of <Name>\" / \"Inside <X>: The Most Powerful…\" / \"The Tragedy of <Name>\" — name in the first 40 characters, no year tag unless it is news.",
+    "geo": "USA, UK, Canada, Australia and India (English-speaking adults 18–44 interested in success stories and history)."
+  },
+  "thumb_rules": "Subject portrait left; 2–3 line title right with one gold word; pillar tag (MINDSET / POWER / CHAMPION / VISIONARY); brand bug in a top corner; dark cinematic background with high contrast.",
+  "voice": {
+    "engine": "gemini",
+    "gemini_voice": "Charon"
+  }
+}

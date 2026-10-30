@@ -1,0 +1,16 @@
+{
+  "name": "anand-youtube-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Anand's YouTube Studio — research, songs, timeline, images, videos, edit and publish for 4 channels.",
+  "scripts": {
+    "start": "node server/server.js",
+    "agent": "node tools/agent.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "playwright-core": "1.56.1"
+  }
+}

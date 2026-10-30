@@ -1,0 +1,158 @@
+{
+  "note": "Free Hugging Face Spaces the Studio can call. inputs = the Space's API arguments in order; {prompt}, {image}, {seconds}, {width}, {height} are filled in. Check a Space's arguments at https://<host>/gradio_api/info. Set enabled:false to skip one. Free Spaces need a free Hugging Face token (Settings) — anonymous API calls are refused. images_ref = Spaces that take the channel's character sheets as reference pictures ({refs}); they keep the cast the same in every scene.",
+  "images": [
+    {
+      "id": "flux-schnell",
+      "host": "black-forest-labs-flux-1-schnell.hf.space",
+      "api": "infer",
+      "inputs": [
+        "{prompt}",
+        0,
+        true,
+        1344,
+        768,
+        4
+      ],
+      "timeout_s": 240,
+      "enabled": true
+    },
+    {
+      "id": "flux-merged",
+      "host": "multimodalart-flux-1-merged.hf.space",
+      "api": "infer",
+      "inputs": [
+        "{prompt}",
+        0,
+        true,
+        1344,
+        768,
+        3.5,
+        8
+      ],
+      "timeout_s": 300,
+      "enabled": true
+    }
+  ],
+  "videos": [
+    {
+      "id": "wan2.2-fast",
+      "host": "zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space",
+      "api": "generate_video",
+      "inputs": [
+        "{image}",
+        "{prompt}",
+        6,
+        "色调艳丽, 过曝, 静态, 细节模糊不清, 字幕, 风格, 作品, 画作, 画面, 静止, 整体发灰, 最差质量, 低质量, JPEG压缩残留, 丑陋的, 残缺的, 多余的手指, 画得不好的手部, 画得不好的脸部, 畸形的, 毁容的, 形态畸形的肢体, 手指融合, 静止不动的画面, 杂乱的背景, 三条腿, 背景人很多, 倒着走",
+        "{seconds}",
+        1,
+        1,
+        42,
+        true
+      ],
+      "max_seconds": 5,
+      "timeout_s": 600,
+      "enabled": true
+    },
+    {
+      "id": "ltx-video",
+      "host": "lightricks-ltx-video-distilled.hf.space",
+      "api": "image_to_video",
+      "inputs": [
+        "{prompt}",
+        "worst quality, inconsistent motion, blurry, jittery, distorted",
+        "{image}",
+        null,
+        512,
+        896,
+        "image-to-video",
+        "{seconds}",
+        9,
+        42,
+        true,
+        1,
+        true
+      ],
+      "max_seconds": 8,
+      "timeout_s": 600,
+      "enabled": true
+    }
+  ],
+  "images_ref": [
+    {
+      "id": "flux1-kontext-dev",
+      "host": "black-forest-labs-flux-1-kontext-dev.hf.space",
+      "api": "infer",
+      "inputs": [
+        "{ref1}",
+        "{prompt}",
+        0,
+        true,
+        2.5,
+        24
+      ],
+      "single_ref": true,
+      "needs_refs": true,
+      "timeout_s": 300,
+      "enabled": true
+    },
+    {
+      "id": "flux2-klein-9b",
+      "host": "black-forest-labs-flux-2-klein-9b.hf.space",
+      "api": "generate",
+      "inputs": [
+        "{prompt}",
+        "{refs}",
+        "Distilled (4 steps)",
+        0,
+        true,
+        1344,
+        768,
+        4,
+        1,
+        false
+      ],
+      "timeout_s": 300,
+      "enabled": false,
+      "note": "refused jobs from free accounts on 2026-10-17"
+    },
+    {
+      "id": "qwen-image-edit-2511",
+      "host": "qwen-qwen-image-edit-2511.hf.space",
+      "api": "infer",
+      "inputs": [
+        "{refs}",
+        "{prompt}",
+        0,
+        true,
+        4,
+        30,
+        768,
+        1344,
+        false
+      ],
+      "needs_refs": true,
+      "timeout_s": 400,
+      "enabled": false,
+      "note": "refused jobs from free accounts on 2026-10-17"
+    },
+    {
+      "id": "flux2-dev",
+      "host": "black-forest-labs-flux-2-dev.hf.space",
+      "api": "infer",
+      "inputs": [
+        "{prompt}",
+        "{refs}",
+        0,
+        true,
+        1344,
+        768,
+        28,
+        4,
+        false
+      ],
+      "timeout_s": 400,
+      "enabled": false,
+      "note": "refused jobs from free accounts on 2026-10-17"
+    }
+  ]
+}
